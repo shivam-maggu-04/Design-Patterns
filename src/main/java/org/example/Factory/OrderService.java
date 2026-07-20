@@ -1,9 +1,11 @@
 package org.example.Factory;
 
 public class OrderService {
-
     public void sendNotification()  {
-        Notification notification = NotificationFactory.setNotification("EMAIL");
+
+        NotificationFactory factory = new SmsFactory();
+        Notification notification = factory.createNotification();
         notification.send();
+
     }
 }

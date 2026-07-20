@@ -2,7 +2,8 @@ package org.example.Factory;
 
 public class DeliveryService {
     public void sendNotification()  {
-        Notification notification = NotificationFactory.setNotification("SMS");
+        NotificationFactory factory = new EmailFactory();
+        Notification notification = factory.createNotification();
         notification.send();
     }
 }
